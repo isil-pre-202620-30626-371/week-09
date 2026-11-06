@@ -23,3 +23,21 @@ En la prueba final, los participantes clasificados compiten y registran un nuevo
 ## Resultado esperado
 
 El sistema debe permitir identificar que participantes clasificaron a la prueba final, mostrar el orden final de la competencia según los tiempos registrados y actualizar la marca personal de quienes hayan superado su record previo durante la carrera final.
+
+```mermaid
+classDiagram
+    class Participant {
+        -id int
+        -String name
+        -double personalRecord
+        -double classificationRecord
+        -double finalRecord
+    }
+
+    class Competition {
+        -double classificationTime
+        -List~Participant~ participants
+    }
+
+    Competition o-- Participant
+```
